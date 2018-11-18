@@ -1,0 +1,19 @@
+<h3 class="employee-list-wrapper">Employee lists</h3>
+
+<div class="employee-list relative">
+<div class="table">
+	<div class="tableHead">
+		<div> Id</div>
+		<div> User name</div>
+		<div> Phone</div>
+		<div> Role</div>
+		<div> Name</div>
+		<div>  </div>
+	</div>
+	<div class="tableBody">
+		<div *ngFor="let employee of employeeList">
+			<employee-detail [employee]="employee"></employee-detail>
+		</div>
+	</div>
+</div>
+</div>

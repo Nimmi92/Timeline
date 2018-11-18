@@ -1,0 +1,15 @@
+<form [formGroup]="employeeEditForm" (ngSubmit)="saveEmployee()">
+<div class="employee-item">
+	<div>{{employee.id}}</div>
+	<div>{{employee.username}}</div>
+	<div>{{employee.phone}}</div>
+	<div>{{employee.role}}</div>
+	<div>{{employee.name}}</div>
+	<div>
+		<div class="">
+			<button class="edit-control inlineBlock" (click)="editEmployee(employee.id)">E</button>
+			<button class="delete-control inlineBlock"(click)="deleteEmployee(employee.id)">D</button>
+		</div>
+	</div>
+</div>
+</form>

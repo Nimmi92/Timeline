@@ -1,0 +1,7 @@
+<h3 class="post-list-wrapper">Post lists</h3>
+<p *ngIf="postList.length===0"> No posts found!  Add a new post!</p>
+<ul class="post-list">
+	<li *ngFor="let post of postList">
+		<post-detail [post]="post"></post-detail>
+	</li>
+</ul>

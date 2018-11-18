@@ -1,0 +1,14 @@
+<div class="employee-edit" *ngIf="this.isopen">
+	<h3>Enter employee details</h3>
+	<form [formGroup]="employeeEditForm" (ngSubmit)="saveEmployeeDetails()">
+	<label>Name:</label>
+	<input type="text" name="Name" formControlName="name" #newEmployee required/>
+	<label>User Name:</label>
+	<input type="text" name="User Name" formControlName="username" #username required/>
+	<label>Phone Number:</label>
+	<input type="tel" name="Phone Number" formControlName="phone" #phone required/>
+	<label>Role:</label>
+	<input type="text" name="Role" formControlName="role" #role required/>
+	<button class="add-btn" type="submit" [disabled]="!employeeEditForm.valid" (click)="saveEmployeeDetails()">Save</button>
+	</form>
+</div>

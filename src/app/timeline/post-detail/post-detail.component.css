@@ -1,0 +1,38 @@
+.post-item {
+	border: 1px solid #ccc;
+	padding: 10px;
+	min-height: 150px;
+	background: #fbfbfb;
+	margin-bottom: 10px;
+}
+.post-item:odd {
+	background: #fcfcfc;
+}
+.controls {
+	right: 10px;
+	top: 50px;
+}
+.controls > span, .editing-controls > span {
+	padding: 10px;
+	border: 1px solid #ddd;
+	margin: 2px 5px;	
+}
+.editing-controls {
+	left: 10px;
+	bottom: 10px;
+}
+.description {
+	width: 80%;
+	border: none;
+	background: none;
+	overflow-y: auto;
+	min-height: 50px;
+}
+.description.editing {
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.createdBy {
+	margin-top: 10px;
+	font-size: 14px;
+}

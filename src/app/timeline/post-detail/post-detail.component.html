@@ -1,0 +1,12 @@
+<div class="post-item relative">
+<p class="createdBy italic">{{post.createdBy}} says...</p>
+<textarea [attr.disabled]="!this.isEditing ? '' : null" class="description" #editedPost>{{post.description}}</textarea>
+<div class="controls absolute">
+	<span class="edit-control inlineBlock" (click)="editPost(post.id)">Edit</span>
+	<span class="delete-control inlineBlock"(click)="deletePost(post.id)">Delete</span>
+</div>
+<div class="editing-controls absolute" *ngIf="this.isEditing">
+	<span class="save-control inlineBlock"(click)="savePost(post.id,editedPost.value)">Save</span>
+	<span class="cancel-control inlineBlock"(click)="cancelPost(post.id)">Cancel</span>
+</div>
+</div>

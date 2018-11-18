@@ -1,0 +1,28 @@
+<div class="employee-new">
+	<h3>Enter employee details</h3>
+	<form [formGroup]="employeeForm" (ngSubmit)="submitEmployeeDetails()">
+	<div class="formItem">
+		<label>Id:*</label>
+		<input type="text" name="Id" formControlName="id" required/>
+	</div>
+	<div class="formItem">
+		<label>Name:*</label>
+		<input type="text" name="Name" formControlName="name" required/>
+	</div>
+	<div class="formItem">
+		<label>User Name:*</label>
+		<input type="text" name="User Name" formControlName="username" #username required/>
+	</div>
+	<div class="formItem">
+		<label>Phone Number:*</label>
+		<input type="tel" name="Phone Number" formControlName="phone" #phone required/>
+	</div>
+	<div class="formItem">
+		<label>Role:*</label>
+		<input type="text" name="Role" formControlName="role" #role required/>
+	</div>
+	<div class="formItem">
+		<button class="add-btn" type="submit" [disabled]="!employeeForm.valid" (click)="submitEmployeeDetails()">Add</button>
+	</div>
+	</form>
+</div>

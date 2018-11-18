@@ -1,0 +1,27 @@
+.employee-item > div {
+	padding: 10px;
+	display: inline-block;
+	width: 6rem;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.employee-item > div:first-child {
+	width: 1rem;
+}
+.employee-item:odd() {
+	background: #fcfcfc;
+}
+.controls {
+	right: 10px;
+	top: 50px;
+}
+.controls > span, .editing-controls > span {
+	padding: 10px;
+	border: 1px solid #ddd;
+	margin: 2px 5px;	
+}
+.editing-controls {
+	left: 10px;
+	bottom: 10px;
+}

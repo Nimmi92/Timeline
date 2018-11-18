@@ -1,0 +1,25 @@
+.employee-list-wrapper {
+	margin-top: 20px;
+}
+.employee-list {
+	list-style-type: none;
+}
+.table {
+	border: 1px solid #ccc;
+}
+.tableHead > div {
+	display: inline-block;
+	padding: 10px;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width: 6rem;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tableHead > div:first-child {
+	width: 1rem;
+}
+.tableHead > div:last-child {
+	border-right: none;
+}

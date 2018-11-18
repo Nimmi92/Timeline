@@ -1,0 +1,23 @@
+.employee-new {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+form {
+	margin: 10px;
+}
+.add-btn {
+	background: blue;
+	padding: 10px;
+	margin: 0 10px;
+	border: none;
+	min-width: 80px;
+	margin-left: 125px;
+}
+label {
+	margin-right: 5px;
+	min-width: 120px;
+	display: inline-block;
+}
+.formItem {
+	margin-bottom: 10px;
+}
