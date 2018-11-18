@@ -2,29 +2,29 @@
 	<h3>Enter employee details</h3>
 	<form [formGroup]="employeeForm" (ngSubmit)="submitEmployeeDetails()">
 	<div class="formItem">
-		<label>Id:*</label>
-		<input type="text" name="Id" formControlName="id" #id required />
-		<span *ngIf="employeeForm.controls.id.invalid">ID must be a number and should be unique</span>
+		<label>ID:*</label>
+		<input type="number" name="Id" formControlName="id" #id required />
+		<div class="condition" *ngIf="employeeForm.controls.id.invalid">ID must be a number and should be unique</div>
 	</div>
 	<div class="formItem">
 		<label>Name:*</label>
 		<input type="text" name="Name" formControlName="name" #name required/>
-		<span *ngIf="employeeForm.controls.name.invalid">Name is required</span>
+		<div class="condition" *ngIf="employeeForm.controls.name.invalid">Name is required</div>
 	</div>
 	<div class="formItem">
 		<label>User Name:*</label>
 		<input type="text" name="User Name" formControlName="username" #username required/>
-		<span *ngIf="employeeForm.controls.username.invalid">User Name is required</span>
+		<div class="condition" *ngIf="employeeForm.controls.username.invalid">User Name is required and can contain any word character, - or _</div>
 	</div>
 	<div class="formItem">
 		<label>Phone Number:*</label>
 		<input type="tel" name="Phone Number" formControlName="phone" #phone required/>
-		<span *ngIf="employeeForm.controls.phone.invalid">Phone is required</span>
+		<div class="condition" *ngIf="employeeForm.controls.phone.invalid">Phone number is required and should be unique</div>
 	</div>
 	<div class="formItem">
 		<label>Role:*</label>
 		<input type="text" name="Role" formControlName="role" #role required/>
-		<span *ngIf="employeeForm.controls.role.invalid">Role is required</span>
+		<div class="condition" *ngIf="employeeForm.controls.role.invalid">Role is required</div>
 	</div>
 	<div class="formItem">
 		<button class="add-btn" type="submit" >Add</button>

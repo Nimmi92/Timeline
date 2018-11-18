@@ -17,10 +17,10 @@ export class EmployeeNewComponent implements OnInit {
     let self = this;
     let employeeList =[];
     this.employeeForm = this.fb.group({
-     id: ['', [this.uniqueIdValidator]],
+     id: ['', [this.uniqueIdValidator.bind(this)]],
      name: ['', [Validators.required]],
-     username: ['', [Validators.required]],
-     phone: ['', [Validators.required]],
+     username: ['', [this.userNameValidator.bind(this)]],
+     phone: ['', [this.uniquePhoneValidator.bind(this)]],
      role: ['', [Validators.required]],
     });
   }
@@ -29,11 +29,32 @@ export class EmployeeNewComponent implements OnInit {
      this.employeeListService.listSource.subscribe({
       next: (updatedList) => {this.employeeList = updatedList}
     });
+  } 
+
+  userNameValidator(control: AbstractControl) {
+    if(control && (control.value !== null || control.value !== undefined)) {
+      const regex = new RegExp(/[\w-_]+/);
+      if(!regex.test(control.value)) {
+        return {
+          isError : true
+        };
+      }
+    }
+    return null;
   }
 
-  
+  uniqueIdValidator(control: AbstractControl) {
+     let getEmployeeList = [];
+     let empIds=[];
+     this.employeeListService.listSource.subscribe({
+      next: (updatedList) => {
+      this.getEmployeeList = updatedList;
+      this.getEmployeeList.forEach((emp,i) => {
+        empIds.push(emp.id);
+      })
+      }
+    });
 
-  uniqueIdValidator(control: AbstractControl, this) {
     if(control && (control.value !== null || control.value !== undefined)) {
       const regex = new RegExp('^[0-9]*');
       if(!regex.test(control.value)) {
@@ -43,13 +64,41 @@ export class EmployeeNewComponent implements OnInit {
         };
       }
       else {   
-        this.employeeList.map((emp,i) => {
-          if(emp.id === control.value) {
-            return {
-              isError : true
-            };
-          }
-        })
+        if(empIds.indexOf(control.value) > -1) {
+          return {
+            isError : true
+          };
+        }
+      }
+    }
+    return null;
+  }
+
+  uniquePhoneValidator(control: AbstractControl) {
+     let getEmployeeList = [];
+     let empPhones=[];
+     this.employeeListService.listSource.subscribe({
+      next: (updatedList) => {
+      this.getEmployeeList = updatedList;
+      this.getEmployeeList.forEach((emp,i) => {
+        empPhones.push(emp.phone);
+      })
+      }
+    });
+
+    if(control && (control.value !== null || control.value !== undefined)) {
+      const regex = new RegExp('^[0-9]*');
+      if(!regex.test(control.value)) {
+        return {
+          isError : true
+        };
+      }
+      else {   
+        if(empPhones.indexOf(control.value) > -1) {
+          return {
+            isError : true
+          };
+        }
       }
     }
     return null;

@@ -21,7 +21,8 @@ label {
 .formItem {
 	margin-bottom: 10px;
 }
-.formItem span {
+.formItem .condition {
 	font-size: 12px;
-	margin-left: 2px;
+	margin: 5px 2px;
+	margin-left: 125px;
 }
