@@ -8,10 +8,12 @@ import { PostListService } from "../post-list/post-list.service";
 })
 export class PostDetailComponent implements OnInit {
 	@Input() post;
-  	isEditing: boolean;
+  isEditing: boolean;
 
   constructor(private postList: PostListService) {
   	let isEditing = false;
+    let poster = {};
+    let posterVisible = false;
   }
 
   ngOnInit() {
@@ -19,7 +21,6 @@ export class PostDetailComponent implements OnInit {
   }
 
   editPost(id) {
-  console.log(this)
     this.isEditing = true;
   }
 
@@ -35,4 +36,15 @@ export class PostDetailComponent implements OnInit {
   deletePost(id) {
     this.postList.deletePost(id);
   }
+
+  showPosterDetails(poster) {
+    this.posterVisible = true;
+    this.poster = this.postList.showPosterDetails(poster);
+  }
+
+  hidePosterDetails() {
+    this.posterVisible = false;
+    this.poster = {}
+  }
+
 }

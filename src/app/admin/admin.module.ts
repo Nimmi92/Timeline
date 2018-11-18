@@ -20,8 +20,8 @@ import { EmployeeListService }    from './employee-list/employee-list.service';
   	AdminComponent,
     EmployeeNewComponent,
     EmployeeListComponent,
-    EmployeeDetailComponent,
-    EmployeeEditComponent
+    EmployeeDetailComponent
+    
   ],
   providers: [EmployeeListService],
   entryComponents: [AdminComponent]

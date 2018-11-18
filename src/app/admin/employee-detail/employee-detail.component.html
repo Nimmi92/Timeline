@@ -1,14 +1,30 @@
 <form [formGroup]="employeeEditForm" (ngSubmit)="saveEmployee()">
 <div class="employee-item">
 	<div>{{employee.id}}</div>
-	<div>{{employee.username}}</div>
-	<div>{{employee.phone}}</div>
-	<div>{{employee.role}}</div>
-	<div>{{employee.name}}</div>
 	<div>
-		<div class="">
+		<span [hidden]="this.isEditing">{{employee.username}}</span>
+		<input type="text" [hidden]="!this.isEditing"/>
+	</div>
+	<div>
+		<span [hidden]="this.isEditing">{{employee.phone}}</span>
+		<input type="tel" [hidden]="!this.isEditing"/>
+	</div>
+	<div>
+		<span [hidden]="this.isEditing">{{employee.role}}</span>
+		<input type="text" [hidden]="!this.isEditing"/>
+	</div>
+	<div>
+		<span [hidden]="this.isEditing">{{employee.role}}</span>
+		<input type="text" [hidden]="!this.isEditing"/>
+	</div>
+	<div>
+		<div class="" [hidden]="this.isEditing">
 			<button class="edit-control inlineBlock" (click)="editEmployee(employee.id)">E</button>
 			<button class="delete-control inlineBlock"(click)="deleteEmployee(employee.id)">D</button>
+		</div>
+		<div class="" [hidden]="!this.isEditing">
+			<button class="edit-control inlineBlock" (click)="saveEmployee(employee.id)">S</button>
+			<button class="delete-control inlineBlock"(click)="cancelEmployee(employee.id)">C</button>
 		</div>
 	</div>
 </div>

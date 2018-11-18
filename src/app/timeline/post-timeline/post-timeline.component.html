@@ -1,4 +1,9 @@
-<div class="post-timeline">
-	<textarea rows="8" cols="50" #newPost></textarea>
-	<button class="post-btn" (click)="addPost(newPost.value)">Post</button>
+<div class="post-timeline relative">
+	<textarea rows="8" cols="50" #newPost (keyup)="startSuggestion(newPost.value)"></textarea>
+	<button class="post-btn" (click)="addPost(newPost)">Post</button>
+	<div *ngIf="suggestedNames && suggestedNames.length > 0" class="suggestion">
+		<ul>
+			<li *ngFor="let name of suggestedNames" (click)="insertSuggestion(name, newPost)">{{name}}</li>
+		</ul>
+	</div>
 </div>

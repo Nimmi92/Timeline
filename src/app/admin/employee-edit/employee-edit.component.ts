@@ -15,7 +15,7 @@ export class EmployeeEditComponent implements OnInit {
   console.log("emp");
   consoloe.log(employee);
 
-  constructor(private employeeList: EmployeeListService, private fb: FormBuilder) {
+  constructor(private employeeListService: EmployeeListService, private fb: FormBuilder) {
   	let isEditing = false;
   }
 
@@ -27,7 +27,7 @@ export class EmployeeEditComponent implements OnInit {
   })
 
   ngOnInit() {
-    this.employeeList.modalState.subscribe(isOpen => this.isOpen = isOpen)
+    this.employeeListService.modalState.subscribe(isOpen => this.isOpen = isOpen)
   }
 
   cancelEdit(id) {
@@ -36,7 +36,7 @@ export class EmployeeEditComponent implements OnInit {
 
   saveEmployee(id,employee) {
   	this.isEditing = false;
-    this.employeeList.saveEmployee(id,this.employeeEditForm.value);
+    this.employeeListService.saveEmployee(id,this.employeeEditForm.value);
   }
 
 }

@@ -5,53 +5,51 @@ import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
 @Injectable()
 export class EmployeeListService {
 
-  constructor(@Inject(LOCAL_STORAGE) private storage: StorageService) { console.log(storage)} 
-
-  private employeeList = [
-		{
-			"id": 1,
-			"username": "Maria",
+  constructor(@Inject(LOCAL_STORAGE) private Storage: StorageService) { 
+    private employeeList = [
+    {
+      "id": 1,
+      "username": "Maria",
       "name": "Maria",
       "phone": 9897897889,
-			"role" : "HR"
-		},
-		{
-			"id": 2,
-			"username" : "Nimmi",
+      "role" : "HR"
+    },
+    {
+      "id": 2,
+      "username" : "Nimmi",
       "name": "Nirmala",
       "phone": 588472889,
-			"role" : "Front End Developer"
-		}
-	];
+      "role" : "Front End Developer"
+    }
+  ];
 
-  storage.set('employeeList', this.employeeList);
-  private employeeListFromLocalStorage = storage.get('employeeList');
-  console.log("from LOCALSTORAGE");
-  console.log(this.employeeListFromLocalStorage);
+  Storage.set('employeeList', this.employeeList);
+  private employeeListFromLocalStorage = Storage.get('employeeList');
 
   private defaultEmployee = 'Maria';
   private isOpen = false;
 
-  private listSource = new BehaviorSubject(this.employeeList);
-  currentList = this.listSource.asObservable();
+  private listSource = new BehaviorSubject(this.employeeListFromLocalStorage);
+  currentList = this.listSource.asObservable();;
 
   private modalState = new BehaviorSubject(this.isOpen);
   modalState = this.modalState.asObservable();
-
   
 
   addEmployee(employee) {
   	let self = this;
   	let employeeList = self.employeeList;
-  	let newEmployeeId = employeeList[employeeList.length-1].id + 1;
   	let newEmployee = {
-  		"id": employee.name,
+  		"id": employee.id,
   		"name": employee.name,
       "username": employee.username,
       "phone": employee.phone,
   		"role": employee.role
   	}
     employeeList.push(newEmployee)
+    this.Storage.set('employeeList', employeeList);
+    this.employeeListFromLocalStorage = this.Storage.get('employeeList');
+    this.listSource.next(this.employeeListFromLocalStorage);
   }
 
   saveEmployee(id,employee) {
@@ -79,6 +77,9 @@ export class EmployeeListService {
   			return employeeList;
   		}
   	})
+    this.Storage.set('employeeList', employeeList);
+    this.employeeListFromLocalStorage = this.Storage.get('employeeList');
+    this.listSource.next(this.employeeListFromLocalStorage);
   }
 
   showModal(id) {
@@ -86,5 +87,8 @@ export class EmployeeListService {
     isOpen = true;
    
   }
+
+  }
+  
 
 }

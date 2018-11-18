@@ -14,7 +14,7 @@ export class EmployeeDetailComponent implements OnInit {
   isEditing: boolean;
 
 
-  constructor(private employeeList: EmployeeListService, private fb: FormBuilder) {
+  constructor(private employeeListService: EmployeeListService, private fb: FormBuilder) {
   	let isEditing = false;
   }
 
@@ -30,15 +30,21 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   editEmployee(id) {
-     this.employeeList.showModal(id)
+    this.isEditing = true;
+    //this.employeeListService.showModal(id)
+  }
+
+  cancelEmployee(id) {
+    this.isEditing = false;
+    //this.employeeListService.showModal(id)
   }
 
   saveEmployee(id,employee) {
   	this.isEditing = false;
-    this.employeeList.saveEmployee(id,this.employeeEditForm.value);
+    this.employeeListService.saveEmployee(id,this.employeeEditForm.value);
   }
 
   deleteEmployee(id) {
-    this.employeeList.deleteEmployee(id);
+    this.employeeListService.deleteEmployee(id);
   }
 }

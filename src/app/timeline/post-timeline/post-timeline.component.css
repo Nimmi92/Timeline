@@ -8,3 +8,20 @@
 	margin: 0 10px;
 	border: none;
 }
+.suggestion{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 14px;
+    padding: 5px;
+    
+}
+.suggestion ul{
+	list-style-type: none;
+}
+.suggestion ul li {
+	margin: 2px; 
+	cursor: pointer;
+}

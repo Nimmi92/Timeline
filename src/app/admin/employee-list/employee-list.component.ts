@@ -7,13 +7,13 @@ import { EmployeeListService } from "./employee-list.service";
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
-  constructor(private employeeList: EmployeeListService) { 
+  constructor(private employeeListService: EmployeeListService) { 
   	
   }
 
   ngOnInit() {
-    this.employeeList.currentList.subscribe(employeeList => {
-    	this.employeeList = employeeList
+    this.employeeListService.listSource.subscribe({
+      next: (updatedList) => {console.log("next");this.employeeList = updatedList}
     })
   }
 }

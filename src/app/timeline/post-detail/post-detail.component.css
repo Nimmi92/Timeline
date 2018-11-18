@@ -12,7 +12,7 @@
 	right: 10px;
 	top: 50px;
 }
-.controls > span, .editing-controls > span {
+.controls > btton, .editing-controls > button {
 	padding: 10px;
 	border: 1px solid #ddd;
 	margin: 2px 5px;	
@@ -33,6 +33,18 @@
 	background: #fff;
 }
 .createdBy {
-	margin-top: 10px;
+	margin: 10px 0;
 	font-size: 14px;
+	display: inline-block;
+	cursor: pointer;
+}
+.poster-details {
+	top: 50px;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	font-size: 14px;
+}
+.poster-details > div {
+	margin-bottom: 2px;
 }
