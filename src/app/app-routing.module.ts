@@ -8,8 +8,8 @@ import { AdminComponent } from './admin/admin.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-	{ path: '', component: TimelineComponent },
-  	{ path: 'admin', component: AdminComponent },
+	{ path: '', pathMatch: 'full', component: TimelineComponent },
+  	{ path: 'admin', pathMatch: 'full',component: AdminComponent },
   	{ path: '**', component: PageNotFoundComponent }
   ];
 

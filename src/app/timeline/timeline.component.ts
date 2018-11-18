@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./timeline.component.css']
 })
 export class TimelineComponent {
-  title = 'Add a new post!';
+  title = 'Share your thoughts!';
 }

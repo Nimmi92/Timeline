@@ -12,10 +12,14 @@
 	right: 10px;
 	top: 50px;
 }
-.controls > btton, .editing-controls > button {
+.controls > button, .editing-controls > button {
 	padding: 10px;
-	border: 1px solid #ddd;
-	margin: 2px 5px;	
+	background: #2f7cce;
+	margin: 0px 5px;	
+	border: none;
+}
+.controls > button:hover, .editing-controls > button:hover {
+	background: #2665a8;
 }
 .editing-controls {
 	left: 10px;

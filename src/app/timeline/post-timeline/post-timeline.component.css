@@ -1,12 +1,15 @@
 .post-timeline {
 	padding: 10px;
-	border: 1px solid #ccc;
+	background: #204368;
 }
 .post-btn {
-	background: blue;
+	background: #2f7cce;
 	padding: 10px;
-	margin: 0 10px;
 	border: none;
+	display: block;
+}
+.post-btn:hover, .post-btn:active, .post-btn:focus {
+	background: #2665a8;
 }
 .suggestion{
     position: absolute;

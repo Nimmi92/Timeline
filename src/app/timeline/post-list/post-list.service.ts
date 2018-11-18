@@ -12,13 +12,15 @@ export class PostListService {
       "id": 1,
       "descriptionText" : "Hello,  I am a new bee to Valispace,  Please welcome me!",
       "description": "Hello,  I am a new bee to Valispace,  Please welcome me!",
-      "createdBy" : "Nirmala"
+      "createdBy" : "Nirmala",
+      "createdOn": ""
     },
     {
       "id": 2,
       "descriptionText" : "Hello folks, there is a Angular developers conference happening next week! Join with me! ",
       "description" : "Hello folks, there is a Angular developers conference happening next week! Join with me! ",
-      "createdBy" : "Sasya"
+      "createdBy" : "Maria",
+      "createdOn": ""
     }
   ]
 

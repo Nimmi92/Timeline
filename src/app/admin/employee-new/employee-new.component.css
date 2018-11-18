@@ -1,6 +1,7 @@
 .employee-new {
 	padding: 10px;
-	border: 1px solid #ccc;
+    background: #204368;
+    color: #fff;
 }
 form {
 	margin: 10px;
