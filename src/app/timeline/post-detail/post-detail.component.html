@@ -7,7 +7,7 @@
 	<div [hidden]="this.isEditing" class="description" [innerHTML]="post.description"></div>
 
 	<div class="controls absolute" [hidden]="this.isEditing">
-		<button class="edit-control inlineBlock" (click)="editPost(post.id)">Edit</button>
+		<button class="edit-control inlineBlock" (click)="editPost(post.id, editedPost)">Edit</button>
 		<button class="delete-control inlineBlock"(click)="deletePost(post.id)">Delete</button>
 	</div>
 	<div class="editing-controls absolute" [hidden]="!this.isEditing">

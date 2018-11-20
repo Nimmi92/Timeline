@@ -7,7 +7,6 @@ import { AdminComponent }    from './admin.component';
 import { EmployeeNewComponent }    from './employee-new/employee-new.component';
 import { EmployeeListComponent }    from './employee-list/employee-list.component';
 import { EmployeeDetailComponent }    from './employee-detail/employee-detail.component';
-import { EmployeeEditComponent }    from './employee-edit/employee-edit.component';
 import { EmployeeListService }    from './employee-list/employee-list.service';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { EmployeeListService }    from './employee-list/employee-list.service';
     EmployeeNewComponent,
     EmployeeListComponent,
     EmployeeDetailComponent
-    
   ],
   providers: [EmployeeListService],
   entryComponents: [AdminComponent]

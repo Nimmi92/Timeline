@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PostListService } from "./post-list.service";
-import { ArraySortPipe } from "../timeline.filters";
 
 @Component({
   selector: 'post-list',
   templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css'],
-  pipes: [ArraySortPipe]
+  styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
   constructor(private postListService: PostListService) { 

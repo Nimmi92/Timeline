@@ -14,7 +14,6 @@ export class EmployeeNewComponent implements OnInit {
   employeeForm: FormGroup;
 
   constructor(private employeeListService: EmployeeListService, private fb: FormBuilder) { 
-    let self = this;
     let employeeList =[];
     this.employeeForm = this.fb.group({
      id: ['', [this.uniqueIdValidator.bind(this)]],
@@ -58,7 +57,6 @@ export class EmployeeNewComponent implements OnInit {
     if(control && (control.value !== null || control.value !== undefined)) {
       const regex = new RegExp('^[0-9]*');
       if(!regex.test(control.value)) {
-        console.log("error")
         return {
           isError : true
         };

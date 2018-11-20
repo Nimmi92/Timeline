@@ -7,17 +7,11 @@ import { EmployeeListService } from "./employee-list/employee-list.service";
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-	isOpen: boolean;
-  constructor(private employeeList: EmployeeListService) { 
+  constructor(private employeeListService: EmployeeListService) { 
   	
   }
   
   ngOnInit() {
-    this.employeeList.modalState.subscribe(isOpen => {
-    this.isOpen = isOpen;
-    console.log("admin ts");
-    console.log(this.isOpen);
-    })
   }
 
 }

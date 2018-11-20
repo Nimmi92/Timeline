@@ -13,7 +13,7 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() {
     this.employeeListService.listSource.subscribe({
-      next: (updatedList) => {console.log("next");this.employeeList = updatedList}
+      next: (updatedList) => {this.employeeList = updatedList}
     })
   }
 }

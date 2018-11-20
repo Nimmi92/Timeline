@@ -20,8 +20,9 @@ export class PostDetailComponent implements OnInit {
  
   }
 
-  editPost(id) {
+  editPost(id,editedPost) {
     this.isEditing = true;
+    editedPost.focus();
   }
 
   cancelPost(id) {

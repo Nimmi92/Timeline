@@ -27,10 +27,11 @@
 }
 .description {
 	width: 80%;
-	border: none;
+	border: 1px solid #ccc;
 	background: none;
 	overflow-y: auto;
 	min-height: 50px;
+	padding: 2px;
 }
 .description.editing {
 	border: 1px solid #ccc;

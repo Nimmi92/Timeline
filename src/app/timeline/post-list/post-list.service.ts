@@ -75,8 +75,7 @@ export class PostListService {
   }
 
   deletePost(id) {
-  	let self = this;
-  	let postList = self.postList;
+  	let postList = this.postList;
   	postList.map((list,i) => {
   		if(list.id === id) {
   			postList.splice(i,1);

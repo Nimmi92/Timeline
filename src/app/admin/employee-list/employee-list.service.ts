@@ -27,18 +27,13 @@ export class EmployeeListService {
   private employeeListFromLocalStorage = Storage.get('employeeList');
 
   private defaultEmployee = 'Maria';
-  private isOpen = false;
 
   private listSource = new BehaviorSubject(this.employeeListFromLocalStorage);
   currentList = this.listSource.asObservable();;
-
-  private modalState = new BehaviorSubject(this.isOpen);
-  modalState = this.modalState.asObservable();
   
 
   addEmployee(employee) {
-  	let self = this;
-  	let employeeList = self.employeeList;
+  	let employeeList = this.employeeList;
   	let newEmployee = {
   		"id": employee.id,
   		"name": employee.name,
@@ -53,8 +48,7 @@ export class EmployeeListService {
   }
 
   saveEmployee(id,employee) {
-  	let self = this;
-  	let employeeList = self.employeeList;
+  	let employeeList = this.employeeList;
   	employeeList.map((emp,i) => {
   		if(emp.id === id) {
   			emp.name = employee.name;
@@ -62,15 +56,13 @@ export class EmployeeListService {
         emp.phone = employee.phone;
         emp.role = employee.role;
   			employeeList[i] = emp;
-        self.isOpen = false;
   			return employeeList;
   		}
   	})
   }
 
   deleteEmployee(id) {
-  	let self = this;
-  	let employeeList = self.employeeList;
+  	let employeeList = this.employeeList;
   	employeeList.map((emp,i) => {
   		if(emp.id === id) {
   			employeeList.splice(i,1);
@@ -80,12 +72,6 @@ export class EmployeeListService {
     this.Storage.set('employeeList', employeeList);
     this.employeeListFromLocalStorage = this.Storage.get('employeeList');
     this.listSource.next(this.employeeListFromLocalStorage);
-  }
-
-  showModal(id) {
-    let isOpen = self.isopen
-    isOpen = true;
-   
   }
 
   }
