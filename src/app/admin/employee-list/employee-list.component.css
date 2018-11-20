@@ -18,7 +18,7 @@
     text-overflow: ellipsis;
 }
 .tableHead > div:first-child {
-	width: 1rem;
+	width: 1.5rem;
 }
 .tableHead > div:last-child {
 	border-right: none;

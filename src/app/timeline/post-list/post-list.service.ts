@@ -27,7 +27,7 @@ export class PostListService {
   private defaultEmployee = 'Maria';
 
   Storage.set('postList', this.postList);
-  private postListFromLocalStorage = Storage.get('postList')
+  private postListFromLocalStorage = Storage.get('postList');
   private listSource = new BehaviorSubject(this.postList);
   currentList = this.listSource.asObservable();
   

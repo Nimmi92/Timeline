@@ -13,7 +13,6 @@ export class EmployeeDetailComponent implements OnInit {
   
   isEditing: boolean;
 
-
   constructor(private employeeListService: EmployeeListService, private fb: FormBuilder) {
   	let isEditing = false;
   }
@@ -31,12 +30,10 @@ export class EmployeeDetailComponent implements OnInit {
 
   editEmployee(id) {
     this.isEditing = true;
-    //this.employeeListService.showModal(id)
   }
 
   cancelEmployee(id) {
     this.isEditing = false;
-    //this.employeeListService.showModal(id)
   }
 
   saveEmployee(id,employee) {

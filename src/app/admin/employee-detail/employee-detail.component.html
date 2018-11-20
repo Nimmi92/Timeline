@@ -18,13 +18,13 @@
 		<input type="text" [hidden]="!this.isEditing"/>
 	</div>
 	<div>
-		<div class="" [hidden]="this.isEditing">
-			<button class="edit-control inlineBlock" (click)="editEmployee(employee.id)">E</button>
-			<button class="delete-control inlineBlock"(click)="deleteEmployee(employee.id)">D</button>
+		<div class="controls" [hidden]="this.isEditing">
+			<button class="edit-control inlineBlock" (click)="editEmployee(employee.id)">Edit</button>
+			<button class="delete-control inlineBlock"(click)="deleteEmployee(employee.id)">Delete</button>
 		</div>
-		<div class="" [hidden]="!this.isEditing">
-			<button class="save-control inlineBlock" (click)="saveEmployee(employee.id)">S</button>
-			<button class="cancel-control inlineBlock"(click)="cancelEmployee(employee.id)">C</button>
+		<div class="controls" [hidden]="!this.isEditing">
+			<button class="save-control inlineBlock" (click)="saveEmployee(employee.id)">Save</button>
+			<button class="cancel-control inlineBlock"(click)="cancelEmployee(employee.id)">Cancel</button>
 		</div>
 	</div>
 </div>

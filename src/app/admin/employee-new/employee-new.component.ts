@@ -105,6 +105,9 @@ export class EmployeeNewComponent implements OnInit {
   }
 
   submitEmployeeDetails() {
-    this.employeeListService.addEmployee(this.employeeForm.value)
+    this.employeeListService.addEmployee(this.employeeForm.value);
+    this.employeeForm.reset();
   }
+
+
 }

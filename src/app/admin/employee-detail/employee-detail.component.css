@@ -7,19 +7,16 @@
     text-overflow: ellipsis;
 }
 .employee-item > div:first-child {
-	width: 1rem;
+	width: 1.5rem;
 }
 .employee-item:odd() {
 	background: #fcfcfc;
 }
-.controls {
-	right: 10px;
-	top: 50px;
-}
-.controls > span, .editing-controls > span {
-	padding: 10px;
-	border: 1px solid #ddd;
-	margin: 2px 5px;	
+.controls button {
+    background: #ccc;
+    border: none;
+    margin-right: 5px;	
+    padding: 2px;
 }
 .editing-controls {
 	left: 10px;
