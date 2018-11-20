@@ -13,16 +13,16 @@ export class PostListService {
       "descriptionText" : "Hello,  I am a new bee to Valispace,  Please welcome me!",
       "description": "Hello,  I am a new bee to Valispace,  Please welcome me!",
       "createdBy" : "Nirmala",
-      "createdOn": ""
+      "createdOn": 1542574999630
     },
     {
       "id": 2,
       "descriptionText" : "Hello folks, there is a Angular developers conference happening next week! Join with me! ",
       "description" : "Hello folks, there is a Angular developers conference happening next week! Join with me! ",
       "createdBy" : "Maria",
-      "createdOn": ""
+      "createdOn": 1542575020321
     }
-  ]
+  ];
 
   private defaultEmployee = 'Maria';
 
@@ -37,17 +37,28 @@ export class PostListService {
     return span.textContent || span.innerText;
   };
 
+  postIdGenerator() {
+    return "ss-s-s-s-sss".replace(/s/g, this.randomGenerator);
+  };
+
+  randomGenerator() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+
   addPost(post,isHTML) {
   	let self = this;
   	let postList = self.postList;
-  	let newPostId = postList[postList.length-1].id + 1;
+  	let newPostId = this.postIdGenerator();
   	let newPost = {
   		"id": newPostId,
-  		"createdBy": self.defaultEmployee
+  		"createdBy": self.defaultEmployee,
+      "description": isHTML ? post : post.value,
+      "descriptionText": isHTML ? self.extractContent(post.value) :  post.value,
+      "createdOn": Date.now()
   	}
-      newPost.description = post;
-      newPost.descriptionText = this.extractContent(post); 
-    postList.push(newPost)
+    postList.unshift(newPost);
   }
 
   savePost(id,post) {
@@ -79,18 +90,17 @@ export class PostListService {
     let employeeNames = [];
     getEmployeesList.map((emp,i) => {
       employeeNames.push(emp.name)
-    })
+    });
     if(word === '') {
       return employeeNames;
     }
     else {
       let suggestedNames = [];
-      console.log(employeeNames)
       employeeNames.map((name,i) => {
         if(name.indexOf(word) > -1){
           suggestedNames.push(name);
         }
-      })
+      });
       return suggestedNames;
     }
   } 

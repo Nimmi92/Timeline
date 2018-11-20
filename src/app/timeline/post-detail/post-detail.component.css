@@ -10,7 +10,7 @@
 }
 .controls {
 	right: 10px;
-	top: 50px;
+	top: 25px;
 }
 .controls > button, .editing-controls > button {
 	padding: 10px;
@@ -52,3 +52,10 @@
 .poster-details > div {
 	margin-bottom: 2px;
 }
+.createdOn{
+    position: absolute;
+    right: 15px;
+    font-size: 10px;
+    font-style: italic;
+}
+

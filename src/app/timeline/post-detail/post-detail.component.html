@@ -1,22 +1,23 @@
 <div class="post-item relative">
-<a class="createdBy italic" (mouseover)="showPosterDetails(post.createdBy)" (mouseout)="hidePosterDetails()" >{{post.createdBy}} says...</a>
-<div [hidden]="!this.isEditing">
-	<textarea class="description" #editedPost >{{post.descriptionText}}</textarea>
-</div>
-<div [hidden]="this.isEditing" class="description" [innerHTML]="post.description"></div>
+	<a class="createdBy italic" (mouseover)="showPosterDetails(post.createdBy)" (mouseout)="hidePosterDetails()" >{{post.createdBy}} says...</a> 
+	<span class="createdOn">{{ post.createdOn | date:'medium' }} </span>
+	<div [hidden]="!this.isEditing">
+		<textarea class="description" #editedPost >{{post.descriptionText}}</textarea>
+	</div>
+	<div [hidden]="this.isEditing" class="description" [innerHTML]="post.description"></div>
 
-<div class="controls absolute" [hidden]="this.isEditing">
-	<button class="edit-control inlineBlock" (click)="editPost(post.id)">Edit</button>
-	<button class="delete-control inlineBlock"(click)="deletePost(post.id)">Delete</button>
-</div>
-<div class="editing-controls absolute" [hidden]="!this.isEditing">
-	<button class="save-control inlineBlock" (click)="savePost(post.id,editedPost.value)">Save</button>
-	<button class="cancel-control inlineBlock" (click)="cancelPost(post.id)">Cancel</button>
-</div>
-<div *ngIf="this.posterVisible" class="poster-details absolute">
-	<div>Name: {{poster.name}}</div>
-	<div>Id: {{poster.id}}</div>
-	<div>Role: {{poster.role}}</div>
-	<div>Phone: {{poster.phone}}</div>
-</div>
+	<div class="controls absolute" [hidden]="this.isEditing">
+		<button class="edit-control inlineBlock" (click)="editPost(post.id)">Edit</button>
+		<button class="delete-control inlineBlock"(click)="deletePost(post.id)">Delete</button>
+	</div>
+	<div class="editing-controls absolute" [hidden]="!this.isEditing">
+		<button class="save-control inlineBlock" (click)="savePost(post.id,editedPost.value)">Save</button>
+		<button class="cancel-control inlineBlock" (click)="cancelPost(post.id)">Cancel</button>
+	</div>
+	<div *ngIf="this.posterVisible" class="poster-details absolute">
+		<div>Name: {{poster.name}}</div>
+		<div>Id: {{poster.id}}</div>
+		<div>Role: {{poster.role}}</div>
+		<div>Phone: {{poster.phone}}</div>
+	</div>
 </div>
